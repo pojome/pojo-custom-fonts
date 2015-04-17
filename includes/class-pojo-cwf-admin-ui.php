@@ -52,6 +52,10 @@ final class Pojo_CWF_Admin_UI {
 				$return = Pojo_CWF_Main::instance()->db->update_font(
 					array(
 						'name' => $_POST['name'],
+						'font_eot' => $_POST['font_eot'],
+						'font_woff' => $_POST['font_woff'],
+						'font_ttf' => $_POST['font_ttf'],
+						'font_svg' => $_POST['font_svg'],
 					)
 				);
 
@@ -70,6 +74,10 @@ final class Pojo_CWF_Admin_UI {
 				$return = Pojo_CWF_Main::instance()->db->update_font(
 					array(
 						'name' => $_POST['name'],
+						'font_eot' => $_POST['font_eot'],
+						'font_woff' => $_POST['font_woff'],
+						'font_ttf' => $_POST['font_ttf'],
+						'font_svg' => $_POST['font_svg'],
 					),
 					$_POST['font_id']
 				);
@@ -94,7 +102,6 @@ final class Pojo_CWF_Admin_UI {
 		);
 	}
 
-
 	public function display_page() {
 		$fonts = Pojo_CWF_Main::instance()->db->get_fonts();
 		?>
@@ -116,6 +123,41 @@ final class Pojo_CWF_Admin_UI {
 						</label>
 					</div>
 
+					<?php
+					// eot
+					// woff
+					// ttf
+					// svg
+					//$this->_print_image_field( 'font_eot', __( 'Font .eot', '' ) ); ?>
+
+					<div>
+						<label>
+							<?php _e( 'Font .eot', 'pojo-cwf' ); ?>:
+							<input type="text" name="font_eot" />
+						</label>
+					</div>
+					
+					<div>
+						<label>
+							<?php _e( 'Font .woff', 'pojo-cwf' ); ?>:
+							<input type="text" name="font_woff" />
+						</label>
+					</div>
+					
+					<div>
+						<label>
+							<?php _e( 'Font .ttf', 'pojo-cwf' ); ?>:
+							<input type="text" name="font_ttf" />
+						</label>
+					</div>
+					
+					<div>
+						<label>
+							<?php _e( 'Font .svg', 'pojo-cwf' ); ?>:
+							<input type="text" name="font_svg" />
+						</label>
+					</div>
+					
 					<div>
 						<p><button type="submit" class="button"><?php _e( 'Create', 'pojo-cwf' ); ?></button></p>
 					</div>
@@ -155,6 +197,10 @@ final class Pojo_CWF_Admin_UI {
 			</div>
 		</div>
 		<?php
+	}
+
+	protected function _print_image_field( $id, $title, $value = '' ) {
+		
 	}
 
 	public function __construct() {
