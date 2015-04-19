@@ -32,6 +32,11 @@ final class Pojo_CWF_Main {
 	 */
 	public $db;
 
+	/**
+	 * @var Pojo_CWF_Register
+	 */
+	public $register;
+
 	public function load_textdomain() {
 		load_plugin_textdomain( 'pojo-cwf', false, basename( dirname( __FILE__ ) ) . '/languages' );
 	}
@@ -74,9 +79,11 @@ final class Pojo_CWF_Main {
 	public function bootstrap() {
 		include( 'includes/class-pojo-cwf-db.php' );
 		include( 'includes/class-pojo-cwf-admin-ui.php' );
+		include( 'includes/class-pojo-cwf-register.php' );
 
 		$this->db        = new Pojo_CWF_DB();
 		$this->admin_ui  = new Pojo_CWF_Admin_UI();
+		$this->register  = new Pojo_CWF_Register();
 	}
 	
 	private function __construct() {

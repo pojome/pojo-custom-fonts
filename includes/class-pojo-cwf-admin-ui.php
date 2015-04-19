@@ -29,7 +29,7 @@ final class Pojo_CWF_Admin_UI {
 	}
 
 	public function ajax_pcwf_remove_font() {
-		if ( ! isset( $_GET['font_id'] ) || ! check_ajax_referer( 'pcwf-remove-sidebar-' . $_GET['font_id'], '_nonce', false ) || ! current_user_can( $this->_capability ) ) {
+		if ( ! isset( $_GET['font_id'] ) || ! check_ajax_referer( 'pcwf-remove-font-' . $_GET['font_id'], '_nonce', false ) || ! current_user_can( $this->_capability ) ) {
 			wp_die( __( 'You do not have sufficient permissions to access this page.', 'pojo-cwf' ) );
 		}
 
@@ -40,10 +40,10 @@ final class Pojo_CWF_Admin_UI {
 	}
 
 	public function manager_actions() {
-		if ( empty( $_POST['pwcf_action'] ) )
+		if ( empty( $_POST['pcwf_action'] ) )
 			return;
 
-		switch ( $_POST['pwcf_action'] ) {
+		switch ( $_POST['pcwf_action'] ) {
 			case 'add_font' :
 				if ( ! check_ajax_referer( 'pcwf-add-font', '_nonce', false ) || ! current_user_can( $this->_capability ) ) {
 					wp_die( __( 'You do not have sufficient permissions to access this page.', 'pojo-cwf' ) );
@@ -183,6 +183,34 @@ final class Pojo_CWF_Admin_UI {
 								<label>
 									<?php _e( 'Name', 'pojo-cwf' ); ?>:
 									<input type="text" name="name" value="<?php echo esc_attr( $font_data['name'] ); ?>" />
+								</label>
+							</div>
+
+							<div>
+								<label>
+									<?php _e( 'Font .eot', 'pojo-cwf' ); ?>:
+									<input type="text" name="font_eot" value="<?php echo esc_attr( $font_data['font_eot'] ); ?>" />
+								</label>
+							</div>
+
+							<div>
+								<label>
+									<?php _e( 'Font .woff', 'pojo-cwf' ); ?>:
+									<input type="text" name="font_woff" value="<?php echo esc_attr( $font_data['font_woff'] ); ?>" />
+								</label>
+							</div>
+
+							<div>
+								<label>
+									<?php _e( 'Font .ttf', 'pojo-cwf' ); ?>:
+									<input type="text" name="font_ttf" value="<?php echo esc_attr( $font_data['font_ttf'] ); ?>" />
+								</label>
+							</div>
+
+							<div>
+								<label>
+									<?php _e( 'Font .svg', 'pojo-cwf' ); ?>:
+									<input type="text" name="font_svg" value="<?php echo esc_attr( $font_data['font_svg'] ); ?>" />
 								</label>
 							</div>
 
