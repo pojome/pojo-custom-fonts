@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-custom-web-fonts 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-16 14:03+0300\n"
+"POT-Creation-Date: 2015-04-20 14:06+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,44 +19,84 @@ msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:33
 #: includes/class-pojo-cwf-admin-ui.php:49
-#: includes/class-pojo-cwf-admin-ui.php:67
+#: includes/class-pojo-cwf-admin-ui.php:71
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:89
-#: includes/class-pojo-cwf-admin-ui.php:90
+#: includes/class-pojo-cwf-admin-ui.php:97
+#: includes/class-pojo-cwf-admin-ui.php:98
 msgid "Custom Web Fonts"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:104
+#: includes/class-pojo-cwf-admin-ui.php:111
 msgid "Widgets Area"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:114
-#: includes/class-pojo-cwf-admin-ui.php:142
+#: includes/class-pojo-cwf-admin-ui.php:121
+#: includes/class-pojo-cwf-admin-ui.php:154
 msgid "Name"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:120
+#: includes/class-pojo-cwf-admin-ui.php:126
+#: includes/class-pojo-cwf-admin-ui.php:159
+#: includes/class-pojo-cwf-admin-ui.php:166
+msgid "Font .eot"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:127
+#: includes/class-pojo-cwf-admin-ui.php:160
+#: includes/class-pojo-cwf-admin-ui.php:173
+msgid "Font .woff"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:128
+#: includes/class-pojo-cwf-admin-ui.php:161
+#: includes/class-pojo-cwf-admin-ui.php:180
+msgid "Font .ttf"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:129
+#: includes/class-pojo-cwf-admin-ui.php:162
+#: includes/class-pojo-cwf-admin-ui.php:187
+msgid "Font .svg"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:132
 msgid "Create"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:137
+#: includes/class-pojo-cwf-admin-ui.php:149
 msgid "Remove"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:148
+#: includes/class-pojo-cwf-admin-ui.php:193
 msgid "Update"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:153
+#: includes/class-pojo-cwf-admin-ui.php:198
 msgid "No have any fonts."
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:292
+msgid "Upload or enter the file URL"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:296
+msgid "Insert Font"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:296
+msgid "Insert"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:296
+msgid "Upload a Font"
 msgstr ""
 
 #: includes/class-pojo-cwf-db.php:31
 msgid "You must press name."
 msgstr ""
 
-#: pojo-custom-web-fonts.php:50 pojo-custom-web-fonts.php:61
+#: pojo-custom-web-fonts.php:55 pojo-custom-web-fonts.php:66
 msgid "Cheatin&#8217; huh?"
 msgstr ""
