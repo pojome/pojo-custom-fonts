@@ -36,7 +36,7 @@ final class Pojo_CWF_Register {
 			return;
 		
 		add_action( 'wp_head', array( &$this, 'print_css_fonts' ), 1 );
-		add_filter( 'pojo_register_fonts_faces', array( &$this, 'add_fonts_to_pojo_customizer' ) );
+		add_filter( 'pojo_register_font_faces', array( &$this, 'add_fonts_to_pojo_customizer' ) );
 	}
 
 }
