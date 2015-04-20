@@ -123,40 +123,10 @@ final class Pojo_CWF_Admin_UI {
 						</label>
 					</div>
 
-					<?php
-					// eot
-					// woff
-					// ttf
-					// svg
-					//$this->_print_image_field( 'font_eot', __( 'Font .eot', '' ) ); ?>
-
-					<div>
-						<label>
-							<?php _e( 'Font .eot', 'pojo-cwf' ); ?>:
-							<input type="text" name="font_eot" />
-						</label>
-					</div>
-					
-					<div>
-						<label>
-							<?php _e( 'Font .woff', 'pojo-cwf' ); ?>:
-							<input type="text" name="font_woff" />
-						</label>
-					</div>
-					
-					<div>
-						<label>
-							<?php _e( 'Font .ttf', 'pojo-cwf' ); ?>:
-							<input type="text" name="font_ttf" />
-						</label>
-					</div>
-					
-					<div>
-						<label>
-							<?php _e( 'Font .svg', 'pojo-cwf' ); ?>:
-							<input type="text" name="font_svg" />
-						</label>
-					</div>
+					<?php $this->_print_image_field( 'font_eot', __( 'Font .eot', '' ) ); ?>
+					<?php $this->_print_image_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ) ); ?>
+					<?php $this->_print_image_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ) ); ?>
+					<?php $this->_print_image_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ) ); ?>
 					
 					<div>
 						<p><button type="submit" class="button"><?php _e( 'Create', 'pojo-cwf' ); ?></button></p>
@@ -185,6 +155,11 @@ final class Pojo_CWF_Admin_UI {
 									<input type="text" name="name" value="<?php echo esc_attr( $font_data['name'] ); ?>" />
 								</label>
 							</div>
+
+							<?php $this->_print_image_field( 'font_eot', __( 'Font .eot', '' ), $font_data['font_eot'] ); ?>
+							<?php $this->_print_image_field( 'font_woff', __( 'Font .woff', '' ), $font_data['font_woff'] ); ?>
+							<?php $this->_print_image_field( 'font_ttf', __( 'Font .ttf', '' ), $font_data['font_ttf'] ); ?>
+							<?php $this->_print_image_field( 'font_svg', __( 'Font .svg', '' ), $font_data['font_svg'] ); ?>
 
 							<div>
 								<label>
@@ -227,14 +202,109 @@ final class Pojo_CWF_Admin_UI {
 		<?php
 	}
 
+	public function admin_head() {
+		?>
+		<script>jQuery(document).ready(function($){
+				var file_frame;
+				window.formfield = '';
+
+				$('body').on('click', '.pojo_cwf_upload_file_button', function(e) {
+
+					e.preventDefault();
+
+					var button = $(this);
+
+					window.formfield = $(this).closest('.pojo_cwf_repeatable_upload_wrapper');
+
+					// If the media frame already exists, reopen it.
+					if ( file_frame ) {
+						//file_frame.uploader.uploader.param( 'post_id', set_to_post_id );
+						file_frame.open();
+						return;
+					}
+
+					// Create the media frame.
+					file_frame = wp.media.frames.file_frame = wp.media( {
+						frame: 'post',
+						state: 'insert',
+						title: button.data( 'uploader-title' ),
+						button: {
+							text: button.data( 'uploader-button-text' )
+						},
+						multiple: $( this ).data( 'multiple' ) == '0' ? false : true  // Set to true to allow multiple files to be selected
+					} );
+
+					file_frame.on( 'menu:render:default', function( view ) {
+						// Store our views in an object.
+						var views = {};
+
+						// Unset default menu items
+						view.unset( 'library-separator' );
+						view.unset( 'gallery' );
+						view.unset( 'featured-image' );
+						view.unset( 'embed' );
+
+						// Initialize the views in our view object.
+						view.set( views );
+					} );
+
+					// When an image is selected, run a callback.
+					file_frame.on( 'insert', function() {
+
+						var selection = file_frame.state().get('selection');
+						selection.each( function( attachment, index ) {
+							attachment = attachment.toJSON();
+							if ( 0 === index ) {
+								// place first attachment in field
+								window.formfield.find( '.pojo_cwf_repeatable_attachment_id_field' ).val( attachment.id );
+								window.formfield.find( '.pojo_cwf_repeatable_upload_field' ).val( attachment.url );
+								window.formfield.find( '.pojo_cwf_repeatable_name_field' ).val( attachment.title );
+							} else {
+								// Create a new row for all additional attachments
+								var row = window.formfield,
+									clone = EDD_Download_Configuration.clone_repeatable( row );
+
+								clone.find( '.pojo_cwf_repeatable_attachment_id_field' ).val( attachment.id );
+								clone.find( '.pojo_cwf_repeatable_upload_field' ).val( attachment.url );
+								if ( attachment.title.length > 0 ) {
+									clone.find( '.pojo_cwf_repeatable_name_field' ).val( attachment.title );
+								} else {
+									clone.find( '.pojo_cwf_repeatable_name_field' ).val( attachment.filename );
+								}
+								clone.insertAfter( row );
+							}
+						});
+					});
+
+					// Finally, open the modal
+					file_frame.open();
+				});
+			} );</script>
+		<?php
+	}
+
 	protected function _print_image_field( $id, $title, $value = '' ) {
-		
+		?>
+		<div class="pojo_cwf_repeatable_upload_wrapper">
+			<div class="pojo_cwf_repeatable_upload_field_container">
+				<label>
+					<?php echo $title; ?>
+					<input type="text" class="pojo_cwf_repeatable_upload_field" name="<?php echo esc_attr( $id ); ?>" placeholder="<?php _e( 'Upload or enter the file URL', '' ); ?>" value="<?php echo esc_attr( $value ); ?>" />
+				</label>
+	
+				<span class="pojo_cwf_upload_file">
+					<a href="#" data-uploader-title="<?php _e( 'Insert Font', 'pojo_cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo_cwf' ); ?>" class="pojo_cwf_upload_file_button" onclick="return false;"><?php _e( 'Upload a Font', 'pojo_cwf' ); ?></a>
+				</span>
+			</div>
+		</div>
+		<?php
 	}
 
 	public function __construct() {
 		$this->manager_actions();
 
 		add_action( 'admin_menu', array( &$this, 'register_menu' ), 200 );
+		add_action( 'admin_head', array( &$this, 'admin_head' ) );
 
 		add_action( 'wp_ajax_pcwf_remove_font', array( &$this, 'ajax_pcwf_remove_font' ) );
 	}
