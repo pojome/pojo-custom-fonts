@@ -183,7 +183,7 @@ final class Pojo_CWF_Admin_UI {
 			</label>
 
 			<span class="pojo-span-file-upload">
-				<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload"><?php _e( 'Upload a Font', 'pojo-cwf' ); ?></a>
+				<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload button button-primary"><?php _e( 'Upload a Font', 'pojo-cwf' ); ?></a>
 			</span>
 		</div>
 		<?php
