@@ -27,9 +27,18 @@ final class Pojo_CWF_DB {
 			$id = uniqid();
 
 		$args = array_map( 'trim', $args );
-		if ( empty( $args['name'] ) )
-			return new WP_Error( 'no_press_name', __( 'You must press name.', 'pojo-cwf' ) );
 
+		$require_fields = array(
+			'name',
+			'font_eot',
+			'font_woff',
+			'font_ttf',
+			'font_svg',
+		);
+		foreach ( $require_fields as $field ) {
+			if ( empty( $args[ $field ] ) )
+				return new WP_Error( 'field_empty', __( 'All fields should be filled in.', 'pojo-cwf' ) );
+		}
 		$fonts = $this->get_fonts();
 		$fonts[ $id ] = $args;
 
