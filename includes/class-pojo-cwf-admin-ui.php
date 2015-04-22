@@ -120,13 +120,16 @@ final class Pojo_CWF_Admin_UI {
 						<tbody>
 						<tr>
 							<th class="row"><?php _e( 'Name', 'pojo-cwf' ); ?>:</th>
-							<td><input type="text" name="name" required /></td>
+							<td>
+								<input type="text" name="name" required />
+								<p class="description"><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
+							</td>
 						</tr>
 						
-					<?php $this->_print_image_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ) ); ?>
-					<?php $this->_print_image_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ) ); ?>
-					<?php $this->_print_image_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ) ); ?>
-					<?php $this->_print_image_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ) ); ?>
+						<?php $this->_print_image_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ) ); ?>
+						<?php $this->_print_image_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ) ); ?>
+						<?php $this->_print_image_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ) ); ?>
+						<?php $this->_print_image_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ) ); ?>
 						</tbody>
 					</table>
 					
@@ -151,7 +154,10 @@ final class Pojo_CWF_Admin_UI {
 								<tbody>
 								<tr>
 									<th class="row"><?php _e( 'Name', 'pojo-cwf' ); ?>:</th>
-									<td><input type="text" name="name" value="<?php echo esc_attr( $font_data['name'] ); ?>" required /></td>
+									<td>
+										<input type="text" name="name" value="<?php echo esc_attr( $font_data['name'] ); ?>" required />
+										<p class="description"><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
+									</td>
 								</tr>
 								<?php $this->_print_image_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ), $font_data['font_eot'] ); ?>
 								<?php $this->_print_image_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ), $font_data['font_woff'] ); ?>
@@ -183,11 +189,11 @@ final class Pojo_CWF_Admin_UI {
 			</th>
 			<td>
 				<input type="text" class="pojo-input-file-upload" name="<?php echo esc_attr( $id ); ?>" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>" required />
-			</label>
 
-			<span class="pojo-span-file-upload">
-				<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload"><?php _e( 'Upload a Font', 'pojo-cwf' ); ?></a>
-			</span>
+				<span class="pojo-span-file-upload">
+					<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload"><?php _e( 'Upload a Font', 'pojo-cwf' ); ?></a>
+				</span>
+				<p class="description"><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
 			</td>
 		</tr>
 		<?php
