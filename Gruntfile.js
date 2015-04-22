@@ -1,5 +1,5 @@
 /**
- * Pojo Custom Web Fonts Makefile
+ * Pojo Custom Fonts Makefile
  */
 'use strict';
 

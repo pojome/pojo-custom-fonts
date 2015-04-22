@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Pojo Custom Web Fonts
+Plugin Name: Pojo Custom Fonts
 Plugin URI: http://pojo.me/
 Description: ...
 Author: Pojo Team
