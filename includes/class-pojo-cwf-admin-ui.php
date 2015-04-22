@@ -115,22 +115,24 @@ final class Pojo_CWF_Admin_UI {
 				<form action="" method="post">
 					<input type="hidden" name="pcwf_action" value="add_font" />
 					<input type="hidden" name="_nonce" value="<?php echo wp_create_nonce( 'pcwf-add-font' ) ?>" />
-
-					<div>
-						<label>
-							<?php _e( 'Name', 'pojo-cwf' ); ?>:
-							<input type="text" name="name" />
-						</label>
-					</div>
-
+					
+					<table class="form-table">
+						<tbody>
+						<tr>
+							<th class="row"><?php _e( 'Name', 'pojo-cwf' ); ?>:</th>
+							<td><input type="text" name="name" required /></td>
+						</tr>
+						
 					<?php $this->_print_image_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ) ); ?>
 					<?php $this->_print_image_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ) ); ?>
 					<?php $this->_print_image_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ) ); ?>
 					<?php $this->_print_image_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ) ); ?>
+						</tbody>
+					</table>
 					
-					<div>
-						<p><button type="submit" class="button"><?php _e( 'Create', 'pojo-cwf' ); ?></button></p>
-					</div>
+					<p class="submit">
+						<button type="submit" class="button button-primary"><?php _e( 'Create', 'pojo-cwf' ); ?></button>
+					</p>
 				</form>
 			</div>
 
@@ -145,25 +147,24 @@ final class Pojo_CWF_Admin_UI {
 
 							<h3><?php echo $font_data['name']; ?></h3>
 
-							<div>
+							<table class="form-table">
+								<tbody>
+								<tr>
+									<th class="row"><?php _e( 'Name', 'pojo-cwf' ); ?>:</th>
+									<td><input type="text" name="name" value="<?php echo esc_attr( $font_data['name'] ); ?>" required /></td>
+								</tr>
+								<?php $this->_print_image_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ), $font_data['font_eot'] ); ?>
+								<?php $this->_print_image_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ), $font_data['font_woff'] ); ?>
+								<?php $this->_print_image_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ), $font_data['font_ttf'] ); ?>
+								<?php $this->_print_image_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), $font_data['font_svg'] ); ?>
+								</tbody>
+							</table>
+
+							<p class="submit">
 								<a href="<?php echo $this->get_remove_font_link( $font_id ); ?>"><?php _e( 'Remove', 'pojo-cwf' ); ?></a>
-							</div>
-
-							<div>
-								<label>
-									<?php _e( 'Name', 'pojo-cwf' ); ?>:
-									<input type="text" name="name" value="<?php echo esc_attr( $font_data['name'] ); ?>" required />
-								</label>
-							</div>
-
-							<?php $this->_print_image_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ), $font_data['font_eot'] ); ?>
-							<?php $this->_print_image_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ), $font_data['font_woff'] ); ?>
-							<?php $this->_print_image_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ), $font_data['font_ttf'] ); ?>
-							<?php $this->_print_image_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), $font_data['font_svg'] ); ?>
-
-							<div>
-								<p><button type="submit" class="button"><?php _e( 'Update', 'pojo-cwf' ); ?></button></p>
-							</div>
+								<button type="submit" class="button button-primary"><?php _e( 'Create', 'pojo-cwf' ); ?></button>
+							</p>
+							
 						</form>
 					<?php endforeach; ?>
 				<?php else : ?>
@@ -176,16 +177,19 @@ final class Pojo_CWF_Admin_UI {
 
 	protected function _print_image_field( $id, $title, $value = '' ) {
 		?>
-		<div class="pojo-setting-upload-file-wrap">
-			<label>
+		<tr class="pojo-setting-upload-file-wrap">
+			<th class="row">
 				<?php echo $title; ?>
+			</th>
+			<td>
 				<input type="text" class="pojo-input-file-upload" name="<?php echo esc_attr( $id ); ?>" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>" required />
 			</label>
 
 			<span class="pojo-span-file-upload">
-				<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload button button-primary"><?php _e( 'Upload a Font', 'pojo-cwf' ); ?></a>
+				<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload"><?php _e( 'Upload a Font', 'pojo-cwf' ); ?></a>
 			</span>
-		</div>
+			</td>
+		</tr>
 		<?php
 	}
 
