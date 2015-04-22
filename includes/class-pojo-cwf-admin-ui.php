@@ -94,8 +94,8 @@ final class Pojo_CWF_Admin_UI {
 	public function register_menu() {
 		add_submenu_page(
 			'pojo-home',
-			__( 'Custom Web Fonts', 'pojo-cwf' ),
-			__( 'Custom Web Fonts', 'pojo-cwf' ),
+			__( 'Custom Fonts', 'pojo-cwf' ),
+			__( 'Custom Fonts', 'pojo-cwf' ),
 			$this->_capability,
 			'pojo-cwf',
 			array( &$this, 'display_page' )
@@ -108,7 +108,7 @@ final class Pojo_CWF_Admin_UI {
 		<div class="wrap">
 
 			<div id="icon-themes" class="icon32"></div>
-			<h2><?php _e( 'Custom Web Fonts', 'pojo-cwf' ); ?></h2>
+			<h2><?php _e( 'Custom Fonts', 'pojo-cwf' ); ?></h2>
 
 			<?php // Add Font ?>
 			<div>
@@ -119,22 +119,21 @@ final class Pojo_CWF_Admin_UI {
 					<table class="form-table">
 						<tbody>
 						<tr>
-							<th class="row"><?php _e( 'Name', 'pojo-cwf' ); ?></th>
+							<th class="row"><?php _e( 'Custom Font Name', 'pojo-cwf' ); ?></th>
 							<td>
 								<input type="text" name="name" required />
 								<p class="description"><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
 							</td>
 						</tr>
-						
-						<?php $this->_print_image_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ) ); ?>
-						<?php $this->_print_image_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ) ); ?>
-						<?php $this->_print_image_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ) ); ?>
-						<?php $this->_print_image_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ) ); ?>
+						<?php $this->_print_image_field( 'font_woff', __( 'Custom Font .woff', 'pojo-cwf' ) ); ?>
+						<?php $this->_print_image_field( 'font_ttf', __( 'Custom Font .ttf', 'pojo-cwf' ) ); ?>
+						<?php $this->_print_image_field( 'font_svg', __( 'Custom Font .svg', 'pojo-cwf' ) ); ?>
+						<?php $this->_print_image_field( 'font_eot', __( 'Custom Font .eot', 'pojo-cwf' ) ); ?>
 						</tbody>
 					</table>
 					
 					<p class="submit">
-						<button type="submit" class="button button-primary"><?php _e( 'Create', 'pojo-cwf' ); ?></button>
+						<button type="submit" class="button button-primary"><?php _e( 'Add Custom Font', 'pojo-cwf' ); ?></button>
 					</p>
 				</form>
 			</div>
@@ -153,22 +152,22 @@ final class Pojo_CWF_Admin_UI {
 							<table class="form-table">
 								<tbody>
 								<tr>
-									<th class="row"><?php _e( 'Name', 'pojo-cwf' ); ?></th>
+									<th class="row"><?php _e( 'Custom Font Name', 'pojo-cwf' ); ?></th>
 									<td>
 										<input type="text" name="name" value="<?php echo esc_attr( $font_data['name'] ); ?>" required />
 										<p class="description"><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
 									</td>
 								</tr>
-								<?php $this->_print_image_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ), $font_data['font_eot'] ); ?>
-								<?php $this->_print_image_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ), $font_data['font_woff'] ); ?>
-								<?php $this->_print_image_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ), $font_data['font_ttf'] ); ?>
-								<?php $this->_print_image_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), $font_data['font_svg'] ); ?>
+								<?php $this->_print_image_field( 'font_woff', __( 'Custom Font .woff', 'pojo-cwf' ), $font_data['font_woff'] ); ?>
+								<?php $this->_print_image_field( 'font_ttf', __( 'Custom Font .ttf', 'pojo-cwf' ), $font_data['font_ttf'] ); ?>
+								<?php $this->_print_image_field( 'font_svg', __( 'Custom Font .svg', 'pojo-cwf' ), $font_data['font_svg'] ); ?>
+								<?php $this->_print_image_field( 'font_eot', __( 'Custom Font .eot', 'pojo-cwf' ), $font_data['font_eot'] ); ?>
 								</tbody>
 							</table>
 
 							<p class="submit">
-								<a href="<?php echo $this->get_remove_font_link( $font_id ); ?>"><?php _e( 'Remove', 'pojo-cwf' ); ?></a>
-								<button type="submit" class="button button-primary"><?php _e( 'Create', 'pojo-cwf' ); ?></button>
+								<a class="button" href="<?php echo $this->get_remove_font_link( $font_id ); ?>"><?php _e( 'Remove Font', 'pojo-cwf' ); ?></a>
+								<button type="submit" class="button"><?php _e( 'Update Font', 'pojo-cwf' ); ?></button>
 							</p>
 							
 						</form>
