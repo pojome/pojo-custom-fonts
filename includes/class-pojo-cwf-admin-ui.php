@@ -165,9 +165,9 @@ final class Pojo_CWF_Admin_UI {
 								</tbody>
 							</table>
 
-							<p class="submit">
-								<a class="button" href="<?php echo $this->get_remove_font_link( $font_id ); ?>"><?php _e( 'Remove Font', 'pojo-cwf' ); ?></a>
+							<p class="submit submit-font">
 								<button type="submit" class="button"><?php _e( 'Update Font', 'pojo-cwf' ); ?></button>
+								<a class="deletion" href="<?php echo $this->get_remove_font_link( $font_id ); ?>"><?php _e( 'Remove Font', 'pojo-cwf' ); ?></a>
 							</p>
 							
 						</form>
