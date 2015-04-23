@@ -3,196 +3,111 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 final class Pojo_CWF_Admin_UI {
 
+	protected $_menu_parent = 'pojo-home';
 	protected $_capability = 'edit_theme_options';
-	protected $_page_id = 'pojo-cwf';
-
-	public function get_setting_page_link( $message_id = '' ) {
-		$link_args = array(
-			'page' => $this->_page_id,
-		);
-
-		if ( ! empty( $message_id ) )
-			$link_args['message'] = $message_id;
-
-		return add_query_arg( $link_args, admin_url( 'admin.php' ) );
-	}
-
-	public function get_remove_font_link( $font_id ) {
-		return add_query_arg(
-			array(
-				'action' => 'pcwf_remove_font',
-				'font_id' => $font_id,
-				'_nonce' => wp_create_nonce( 'pcwf-remove-font-' . $font_id ),
-			),
-			admin_url( 'admin-ajax.php' )
-		);
-	}
-
-	public function ajax_pcwf_remove_font() {
-		if ( ! isset( $_GET['font_id'] ) || ! check_ajax_referer( 'pcwf-remove-font-' . $_GET['font_id'], '_nonce', false ) || ! current_user_can( $this->_capability ) ) {
-			wp_die( __( 'You do not have sufficient permissions to access this page.', 'pojo-cwf' ) );
-		}
-
-		Pojo_CWF_Main::instance()->db->remove_font( $_GET['font_id'] );
-
-		wp_redirect( $this->get_setting_page_link() );
-		die();
-	}
-
-	public function manager_actions() {
-		if ( empty( $_POST['pcwf_action'] ) )
-			return;
-
-		switch ( $_POST['pcwf_action'] ) {
-			case 'add_font' :
-				if ( ! check_ajax_referer( 'pcwf-add-font', '_nonce', false ) || ! current_user_can( $this->_capability ) ) {
-					wp_die( __( 'You do not have sufficient permissions to access this page.', 'pojo-cwf' ) );
-				}
-
-				$return = Pojo_CWF_Main::instance()->db->update_font(
-					array(
-						'name' => $_POST['name'],
-						'font_eot' => $_POST['font_eot'],
-						'font_woff' => $_POST['font_woff'],
-						'font_ttf' => $_POST['font_ttf'],
-						'font_svg' => $_POST['font_svg'],
-					)
-				);
-
-				if ( is_wp_error( $return ) ) {
-					wp_die( $return->get_error_message() );
-				}
-
-				wp_redirect( $this->get_setting_page_link() );
-				die;
-
-			case 'update_font' :
-				if ( ! isset( $_POST['font_id'] ) || ! check_ajax_referer( 'pcwf-update-font-' . $_POST['font_id'], '_nonce', false ) || ! current_user_can( $this->_capability ) ) {
-					wp_die( __( 'You do not have sufficient permissions to access this page.', 'pojo-cwf' ) );
-				}
-
-				$return = Pojo_CWF_Main::instance()->db->update_font(
-					array(
-						'name' => $_POST['name'],
-						'font_eot' => $_POST['font_eot'],
-						'font_woff' => $_POST['font_woff'],
-						'font_ttf' => $_POST['font_ttf'],
-						'font_svg' => $_POST['font_svg'],
-					),
-					$_POST['font_id']
-				);
-
-				if ( is_wp_error( $return ) ) {
-					wp_die( $return->get_error_message() );
-				}
-
-				wp_redirect( $this->get_setting_page_link() );
-				die;
-		}
-	}
 
 	public function register_menu() {
 		add_submenu_page(
-			'pojo-home',
-			__( 'Custom Fonts', 'pojo-cwf' ),
-			__( 'Custom Fonts', 'pojo-cwf' ),
+			$this->_menu_parent,
+			__( 'Custom Fonts', 'pojo-sidebars' ),
+			__( 'Custom Fonts', 'pojo-sidebars' ),
 			$this->_capability,
-			'pojo-cwf',
-			array( &$this, 'display_page' )
+			'edit-tags.php?taxonomy=pojo_custom_fonts'
 		);
 	}
 
-	public function display_page() {
-		$fonts = Pojo_CWF_Main::instance()->db->get_fonts();
+	public function menu_highlight() {
+		global $parent_file, $submenu_file;
+
+		if ( 'edit-tags.php?taxonomy=pojo_custom_fonts' === $submenu_file ) {
+			$parent_file = $this->_menu_parent;
+		}
+
+		if ( 'edit-pojo_custom_fonts' !== get_current_screen()->id )
+			return;
+
+		?><style>#addtag div.form-field.term-slug-wrap, #edittag tr.form-field.term-slug-wrap { display: none; }
+			#addtag div.form-field.term-description-wrap, #edittag tr.form-field.term-description-wrap { display: none; }</style><?php
+	}
+
+	public function manage_columns( $columns ) {
+		$old_columns = $columns;
+		$columns = array(
+			'cb' => $old_columns['cb'],
+			'name' => $old_columns['name'],
+			'ID' => __( 'ID', 'pojo-sidebars' ),
+		);
+
+		return $columns;
+	}
+
+	public function sortable_columns( $sortable_columns ) {
+		$sortable_columns['ID'] = 'ID';
+		return $sortable_columns;
+	}
+
+	public function manage_custom_columns( $value, $column_name, $term_id ) {
+		switch ( $column_name ) {
+			case 'ID' :
+				$value = '#' . $term_id;
+				break;
+		}
+
+		return $value;
+	}
+
+	public function save_metadata( $term_id ) {
+		if ( isset( $_POST['pojo_custom_fonts'] ) ) {
+			Pojo_CWF_Main::instance()->db->update_font_links( $_POST['pojo_custom_fonts'], $term_id );
+		}
+	}
+	
+	public function extra_new_metadata() {
+		$this->_print_image_new_field( 'font_woff', __( 'Custom Font .woff', 'pojo-cwf' ) );
+		$this->_print_image_new_field( 'font_ttf', __( 'Custom Font .ttf', 'pojo-cwf' ) );
+		$this->_print_image_new_field( 'font_svg', __( 'Custom Font .svg', 'pojo-cwf' ) );
+		$this->_print_image_new_field( 'font_eot', __( 'Custom Font .eot', 'pojo-cwf' ) );
+	}
+
+	public function extra_edit_metadata( $term ) {
+		$data = Pojo_CWF_Main::instance()->db->get_font_links( $term->term_id );
+		
+		$this->_print_image_edit_field( 'font_woff', __( 'Custom Font .woff', 'pojo-cwf' ), $data['font_woff'] );
+		$this->_print_image_edit_field( 'font_ttf', __( 'Custom Font .ttf', 'pojo-cwf' ), $data['font_ttf'] );
+		$this->_print_image_edit_field( 'font_svg', __( 'Custom Font .svg', 'pojo-cwf' ), $data['font_svg'] );
+		$this->_print_image_edit_field( 'font_eot', __( 'Custom Font .eot', 'pojo-cwf' ), $data['font_eot'] );
+	}
+
+	protected function _print_image_new_field( $id, $title, $value = '' ) {
 		?>
-		<div class="wrap">
-
-			<div id="icon-themes" class="icon32"></div>
-			<h2><?php _e( 'Custom Fonts', 'pojo-cwf' ); ?></h2>
-
-			<?php // Add Font ?>
-			<div>
-				<form action="" method="post">
-					<input type="hidden" name="pcwf_action" value="add_font" />
-					<input type="hidden" name="_nonce" value="<?php echo wp_create_nonce( 'pcwf-add-font' ) ?>" />
-					
-					<table class="form-table">
-						<tbody>
-						<tr>
-							<th class="row"><?php _e( 'Custom Font Name', 'pojo-cwf' ); ?></th>
-							<td>
-								<input type="text" name="name" required />
-								<p class="description"><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
-							</td>
-						</tr>
-						<?php $this->_print_image_field( 'font_woff', __( 'Custom Font .woff', 'pojo-cwf' ) ); ?>
-						<?php $this->_print_image_field( 'font_ttf', __( 'Custom Font .ttf', 'pojo-cwf' ) ); ?>
-						<?php $this->_print_image_field( 'font_svg', __( 'Custom Font .svg', 'pojo-cwf' ) ); ?>
-						<?php $this->_print_image_field( 'font_eot', __( 'Custom Font .eot', 'pojo-cwf' ) ); ?>
-						</tbody>
-					</table>
-					
-					<p class="submit">
-						<button type="submit" class="button button-primary"><?php _e( 'Add Custom Font', 'pojo-cwf' ); ?></button>
-					</p>
-				</form>
-			</div>
-
-			<?php // All Fonts ?>
-			<div>
-				<?php if ( ! empty( $fonts ) ) : ?>
-					<?php foreach ( $fonts as $font_id => $font_data ) : ?>
-						<form action="" method="post">
-							<input type="hidden" name="pcwf_action" value="update_font" />
-							<input type="hidden" name="font_id" value="<?php echo esc_attr( $font_id ); ?>" />
-							<input type="hidden" name="_nonce" value="<?php echo wp_create_nonce( 'pcwf-update-font-' . $font_id ) ?>" />
-
-							<h3><?php echo $font_data['name']; ?></h3>
-
-							<table class="form-table">
-								<tbody>
-								<tr>
-									<th class="row"><?php _e( 'Custom Font Name', 'pojo-cwf' ); ?></th>
-									<td>
-										<input type="text" name="name" value="<?php echo esc_attr( $font_data['name'] ); ?>" required />
-										<p class="description"><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
-									</td>
-								</tr>
-								<?php $this->_print_image_field( 'font_woff', __( 'Custom Font .woff', 'pojo-cwf' ), $font_data['font_woff'] ); ?>
-								<?php $this->_print_image_field( 'font_ttf', __( 'Custom Font .ttf', 'pojo-cwf' ), $font_data['font_ttf'] ); ?>
-								<?php $this->_print_image_field( 'font_svg', __( 'Custom Font .svg', 'pojo-cwf' ), $font_data['font_svg'] ); ?>
-								<?php $this->_print_image_field( 'font_eot', __( 'Custom Font .eot', 'pojo-cwf' ), $font_data['font_eot'] ); ?>
-								</tbody>
-							</table>
-
-							<p class="submit submit-font">
-								<button type="submit" class="button"><?php _e( 'Update Font', 'pojo-cwf' ); ?></button>
-								<a class="deletion" href="<?php echo $this->get_remove_font_link( $font_id ); ?>"><?php _e( 'Remove Font', 'pojo-cwf' ); ?></a>
-							</p>
-							
-						</form>
-					<?php endforeach; ?>
-				<?php else : ?>
-					<p><?php _e( 'No have any fonts.', 'pojo-cwf' ); ?></p>
-				<?php endif; ?>
-			</div>
+		<div class="form-field form-required term-<?php echo esc_attr( $id ); ?>-wrap pojo-setting-upload-file-wrap">
+			<label>
+				<?php echo $title; ?>
+				<input type="text" class="pojo-input-file-upload" name="pojo_custom_fonts[<?php echo esc_attr( $id ); ?>]" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>" required />
+			</label>
+			
+			<span class="pojo-span-file-upload">
+					<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload button"><?php _e( 'Upload', 'pojo-cwf' ); ?></a>
+				</span>
+			<p><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
 		</div>
 		<?php
 	}
 
-	protected function _print_image_field( $id, $title, $value = '' ) {
+	protected function _print_image_edit_field( $id, $title, $value = '' ) {
 		?>
-		<tr class="pojo-setting-upload-file-wrap">
-			<th class="row">
-				<?php echo $title; ?>
+		<tr class="form-field form-required term-<?php echo esc_attr( $id ); ?>-wrap pojo-setting-upload-file-wrap">
+			<th scope="row">
+				<label for="metadata-<?php echo esc_attr( $id ); ?>">
+					<?php echo $title; ?>
+				</label>
 			</th>
 			<td>
-				<input type="text" class="pojo-input-file-upload" name="<?php echo esc_attr( $id ); ?>" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>" required />
-
+				<input id="metadata-<?php echo esc_attr( $id ); ?>" type="text" class="pojo-input-file-upload" name="pojo_custom_fonts[<?php echo esc_attr( $id ); ?>]" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>" required />
 				<span class="pojo-span-file-upload">
 					<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload button"><?php _e( 'Upload', 'pojo-cwf' ); ?></a>
 				</span>
-				<p class="description"><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
+				<p><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
 			</td>
 		</tr>
 		<?php
@@ -209,9 +124,19 @@ final class Pojo_CWF_Admin_UI {
 	}
 
 	public function __construct() {
-		$this->manager_actions();
+		add_action( 'admin_menu', array( &$this, 'register_menu' ), 100 );
+		add_action( 'admin_head', array( &$this, 'menu_highlight' ) );
 
-		add_action( 'admin_menu', array( &$this, 'register_menu' ), 200 );
+		add_filter( 'manage_edit-pojo_custom_fonts_columns', array( &$this, 'manage_columns' ) );
+		add_filter( 'manage_pojo_custom_fonts_custom_column', array( &$this, 'manage_custom_columns' ), 10, 3 );
+		add_filter( 'manage_edit-pojo_custom_fonts_sortable_columns', array( &$this, 'sortable_columns' ) );
+		
+		add_action( 'pojo_custom_fonts_add_form_fields', array( &$this, 'extra_new_metadata' ) );
+		add_action( 'pojo_custom_fonts_edit_form_fields', array( &$this, 'extra_edit_metadata' ) );
+
+		add_action( 'edited_pojo_custom_fonts', array( &$this, 'save_metadata' ) );
+		add_action( 'create_pojo_custom_fonts', array( &$this, 'save_metadata' ) );
+		
 		add_filter( 'upload_mimes', array( &$this, 'add_fonts_to_allowed_mimes' ), 10, 2 );
 		add_action( 'wp_ajax_pcwf_remove_font', array( &$this, 'ajax_pcwf_remove_font' ) );
 	}

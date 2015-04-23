@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: pojo-custom-web-fonts 1.0.0\n"
+"Project-Id-Version: pojo-custom-fonts 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-21 16:36+0300\n"
+"POT-Creation-Date: 2015-04-22 14:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,70 +26,117 @@ msgstr ""
 #: includes/class-pojo-cwf-admin-ui.php:97
 #: includes/class-pojo-cwf-admin-ui.php:98
 #: includes/class-pojo-cwf-admin-ui.php:111
-msgid "Custom Web Fonts"
+msgid "Custom Fonts"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:121
-#: includes/class-pojo-cwf-admin-ui.php:154
-msgid "Name"
+#: includes/class-pojo-cwf-admin-ui.php:122
+#: includes/class-pojo-cwf-admin-ui.php:155
+msgid "Custom Font Name"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:126
-#: includes/class-pojo-cwf-admin-ui.php:159
-msgid "Font .eot"
-msgstr ""
-
-#: includes/class-pojo-cwf-admin-ui.php:127
-#: includes/class-pojo-cwf-admin-ui.php:160
-msgid "Font .woff"
+#: includes/class-pojo-cwf-admin-ui.php:125
+#: includes/class-pojo-cwf-admin-ui.php:158
+#: includes/class-pojo-cwf-admin-ui.php:195
+msgid "Desc?"
 msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:128
 #: includes/class-pojo-cwf-admin-ui.php:161
-msgid "Font .ttf"
+msgid "Custom Font .woff"
 msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:129
 #: includes/class-pojo-cwf-admin-ui.php:162
-msgid "Font .svg"
+msgid "Custom Font .ttf"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:132
-msgid "Create"
+#: includes/class-pojo-cwf-admin-ui.php:130
+#: includes/class-pojo-cwf-admin-ui.php:163
+msgid "Custom Font .svg"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:149
-msgid "Remove"
+#: includes/class-pojo-cwf-admin-ui.php:131
+#: includes/class-pojo-cwf-admin-ui.php:164
+msgid "Custom Font .eot"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:165
-msgid "Update"
+#: includes/class-pojo-cwf-admin-ui.php:136
+msgid "Add Custom Font"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:169 includes/class-pojo-cwf-db.php:19
+msgid "Update Font"
 msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:170
+msgid "Remove Font"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:176
 msgid "No have any fonts."
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:182
+#: includes/class-pojo-cwf-admin-ui.php:190
 msgid "Upload or enter the file URL"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:186
+#: includes/class-pojo-cwf-admin-ui.php:193
 msgid "Insert Font"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:186
+#: includes/class-pojo-cwf-admin-ui.php:193
 msgid "Insert"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:186
-msgid "Upload a Font"
+#: includes/class-pojo-cwf-admin-ui.php:193
+msgid "Upload"
 msgstr ""
 
-#: includes/class-pojo-cwf-db.php:40
+#: includes/class-pojo-cwf-db.php:11
+msgid "Fonts"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:12
+msgid "Font"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:13
+msgctxt "Admin menu name"
+msgid "Fonts"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:14
+msgid "Search Fonts"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:15
+msgid "All Fonts"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:16
+msgid "Parent Font"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:17
+msgid "Parent Font:"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:18
+msgid "Edit Font"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:20
+msgid "Add New Font"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:21
+msgid "New Font Name"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:72
 msgid "All fields should be filled in."
 msgstr ""
 
-#: pojo-custom-web-fonts.php:55 pojo-custom-web-fonts.php:66
+#: pojo-custom-fonts.php:55 pojo-custom-fonts.php:66
 msgid "Cheatin&#8217; huh?"
 msgstr ""
