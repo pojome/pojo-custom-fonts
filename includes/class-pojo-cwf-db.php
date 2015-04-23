@@ -20,9 +20,9 @@ final class Pojo_CWF_DB {
 	protected function _register_taxonomy() {
 		// Taxonomy: pojo_custom_fonts.
 		$labels = array(
-			'name' => __( 'Fonts', 'pojo-cwf' ),
+			'name' => __( 'Custom Fonts', 'pojo-cwf' ),
 			'singular_name' => __( 'Font', 'pojo-cwf' ),
-			'menu_name' => _x( 'Fonts', 'Admin menu name', 'pojo-cwf' ),
+			'menu_name' => _x( 'Custom Fonts', 'Admin menu name', 'pojo-cwf' ),
 			'search_items' => __( 'Search Fonts', 'pojo-cwf' ),
 			'all_items' => __( 'All Fonts', 'pojo-cwf' ),
 			'parent_item' => __( 'Parent Font', 'pojo-cwf' ),

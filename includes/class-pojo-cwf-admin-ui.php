@@ -9,8 +9,8 @@ final class Pojo_CWF_Admin_UI {
 	public function register_menu() {
 		add_submenu_page(
 			$this->_menu_parent,
-			__( 'Custom Fonts', 'pojo-sidebars' ),
-			__( 'Custom Fonts', 'pojo-sidebars' ),
+			__( 'Custom Fonts', 'pojo-cwf' ),
+			__( 'Custom Fonts', 'pojo-cwf' ),
 			$this->_capability,
 			'edit-tags.php?taxonomy=pojo_custom_fonts'
 		);
@@ -35,7 +35,7 @@ final class Pojo_CWF_Admin_UI {
 		$columns = array(
 			'cb' => $old_columns['cb'],
 			'name' => $old_columns['name'],
-			'ID' => __( 'ID', 'pojo-sidebars' ),
+			'ID' => __( 'ID', 'pojo-cwf' ),
 		);
 
 		return $columns;
