@@ -32,7 +32,7 @@ Would you like to like to contribute to Pojo Custom Fonts? You are more than wel
 
 == Installation ==
 
-<strong>Automatic Installation</strong>
+**Automatic Installation**
 
 1. Install using the WordPress built-in Plugin installer > Add New
 1. Activate the plugin through the 'Plugins' menu in WordPress
@@ -40,7 +40,7 @@ Would you like to like to contribute to Pojo Custom Fonts? You are more than wel
 1. Drag and drop the widget and set it
 1. Enjoy!
 
-<strong>Manual Installation</strong>
+**Manual Installation**
 
 1. Extract the zip file and just drop the contents in the <code>wp-content/plugins/</code> directory of your WordPress installation
 1. Activate the plugin through the 'Plugins' menu in WordPress
