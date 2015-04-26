@@ -81,15 +81,13 @@ final class Pojo_CWF_Admin_UI {
 	protected function _print_image_new_field( $id, $title, $value = '' ) {
 		?>
 		<div class="form-field form-required term-<?php echo esc_attr( $id ); ?>-wrap pojo-setting-upload-file-wrap">
-			<label>
-				<?php echo $title; ?>
-				<input type="text" class="pojo-input-file-upload" name="pojo_custom_fonts[<?php echo esc_attr( $id ); ?>]" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>" required />
-			</label>
-			
+			<label class="pojo-file-upload-label"><?php echo $title; ?></label>
+			<input type="text" class="pojo-input-file-upload" name="pojo_custom_fonts[<?php echo esc_attr( $id ); ?>]" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>" required />
+
 			<span class="pojo-span-file-upload">
 					<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload button"><?php _e( 'Upload', 'pojo-cwf' ); ?></a>
 				</span>
-			<p><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
+			<p class="pojo-file-upload-description"><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
 		</div>
 		<?php
 	}
