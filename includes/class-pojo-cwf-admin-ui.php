@@ -27,7 +27,10 @@ final class Pojo_CWF_Admin_UI {
 			return;
 
 		?><style>#addtag div.form-field.term-slug-wrap, #edittag tr.form-field.term-slug-wrap { display: none; }
-			#addtag div.form-field.term-description-wrap, #edittag tr.form-field.term-description-wrap { display: none; }</style><?php
+			#addtag div.form-field.term-description-wrap, #edittag tr.form-field.term-description-wrap { display: none; }</style><script>jQuery( document ).ready( function( $ ) {
+				var $wrapper = $( '#addtag, #edittag' );
+				$wrapper.find( 'tr.form-field.term-name-wrap p, div.form-field.term-name-wrap > p' ).text( '<?php _e( 'The name of the font as it appears in the attached CSS file.', 'pojo-cwf' ); ?>' );
+			} );</script><?php
 	}
 
 	public function manage_columns( $columns ) {
@@ -63,22 +66,22 @@ final class Pojo_CWF_Admin_UI {
 	}
 	
 	public function extra_new_metadata() {
-		$this->_print_image_new_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ) );
-		$this->_print_image_new_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ) );
-		$this->_print_image_new_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ) );
-		$this->_print_image_new_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ) );
+		$this->_print_image_new_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ), __( 'Upload the font\'s woff file', 'pojo-cwf' ) );
+		$this->_print_image_new_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ), __( 'Upload the font\'s ttf file', 'pojo-cwf' ) );
+		$this->_print_image_new_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), __( 'Upload the font\'s svg file', 'pojo-cwf' ) );
+		$this->_print_image_new_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ), __( 'Upload the font\'s eot file', 'pojo-cwf' ) );
 	}
 
 	public function extra_edit_metadata( $term ) {
 		$data = Pojo_CWF_Main::instance()->db->get_font_links( $term->term_id );
 
-		$this->_print_image_edit_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ), $data['font_woff'] );
-		$this->_print_image_edit_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ), $data['font_ttf'] );
-		$this->_print_image_edit_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), $data['font_svg'] );
-		$this->_print_image_edit_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ), $data['font_eot'] );
+		$this->_print_image_edit_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ), __( 'Upload the font\'s woff file', 'pojo-cwf' ), $data['font_woff'] );
+		$this->_print_image_edit_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ), __( 'Upload the font\'s ttf file', 'pojo-cwf' ), $data['font_ttf'] );
+		$this->_print_image_edit_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), __( 'Upload the font\'s svg file', 'pojo-cwf' ), $data['font_svg'] );
+		$this->_print_image_edit_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ), __( 'Upload the font\'s eot file', 'pojo-cwf' ), $data['font_eot'] );
 	}
 
-	protected function _print_image_new_field( $id, $title, $value = '' ) {
+	protected function _print_image_new_field( $id, $title, $description, $value = '' ) {
 		?>
 		<div class="form-field form-required term-<?php echo esc_attr( $id ); ?>-wrap pojo-setting-upload-file-wrap">
 			<label class="pojo-file-upload-label"><?php echo $title; ?></label>
@@ -87,12 +90,12 @@ final class Pojo_CWF_Admin_UI {
 			<span class="pojo-span-file-upload">
 					<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload button"><?php _e( 'Upload', 'pojo-cwf' ); ?></a>
 				</span>
-			<p class="pojo-file-upload-description"><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
+			<p class="pojo-file-upload-description"><?php echo $description; ?></p>
 		</div>
 		<?php
 	}
 
-	protected function _print_image_edit_field( $id, $title, $value = '' ) {
+	protected function _print_image_edit_field( $id, $title, $description, $value = '' ) {
 		?>
 		<tr class="form-field form-required term-<?php echo esc_attr( $id ); ?>-wrap pojo-setting-upload-file-wrap">
 			<th scope="row">
@@ -105,7 +108,7 @@ final class Pojo_CWF_Admin_UI {
 				<span class="pojo-span-file-upload">
 					<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload button"><?php _e( 'Upload', 'pojo-cwf' ); ?></a>
 				</span>
-				<p><?php _e( 'Desc?', 'pojo-cwf' ); ?></p>
+				<p><?php echo $description; ?></p>
 			</td>
 		</tr>
 		<?php

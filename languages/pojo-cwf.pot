@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-custom-fonts 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-26 17:55+0300\n"
+"POT-Creation-Date: 2015-04-26 18:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,53 +22,72 @@ msgstr ""
 msgid "Custom Fonts"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:38
+#: includes/class-pojo-cwf-admin-ui.php:32
+msgid "The name of the font as it appears in the attached CSS file."
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:41
 msgid "ID"
-msgstr ""
-
-#: includes/class-pojo-cwf-admin-ui.php:66
-#: includes/class-pojo-cwf-admin-ui.php:75
-msgid "Font .woff"
-msgstr ""
-
-#: includes/class-pojo-cwf-admin-ui.php:67
-#: includes/class-pojo-cwf-admin-ui.php:76
-msgid "Font .ttf"
-msgstr ""
-
-#: includes/class-pojo-cwf-admin-ui.php:68
-#: includes/class-pojo-cwf-admin-ui.php:77
-msgid "Font .svg"
 msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:69
 #: includes/class-pojo-cwf-admin-ui.php:78
+msgid "Font .woff"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:69
+#: includes/class-pojo-cwf-admin-ui.php:78
+msgid "Upload the font's woff file"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:70
+#: includes/class-pojo-cwf-admin-ui.php:79
+msgid "Font .ttf"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:70
+#: includes/class-pojo-cwf-admin-ui.php:79
+msgid "Upload the font's ttf file"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:71
+#: includes/class-pojo-cwf-admin-ui.php:80
+msgid "Font .svg"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:71
+#: includes/class-pojo-cwf-admin-ui.php:80
+msgid "Upload the font's svg file"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:72
+#: includes/class-pojo-cwf-admin-ui.php:81
 msgid "Font .eot"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:85
-#: includes/class-pojo-cwf-admin-ui.php:104
+#: includes/class-pojo-cwf-admin-ui.php:72
+#: includes/class-pojo-cwf-admin-ui.php:81
+msgid "Upload the font's eot file"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:88
+#: includes/class-pojo-cwf-admin-ui.php:107
 msgid "Upload or enter the file URL"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:88
-#: includes/class-pojo-cwf-admin-ui.php:106
+#: includes/class-pojo-cwf-admin-ui.php:91
+#: includes/class-pojo-cwf-admin-ui.php:109
 msgid "Insert Font"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:88
-#: includes/class-pojo-cwf-admin-ui.php:106
+#: includes/class-pojo-cwf-admin-ui.php:91
+#: includes/class-pojo-cwf-admin-ui.php:109
 msgid "Insert"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:88
-#: includes/class-pojo-cwf-admin-ui.php:106
+#: includes/class-pojo-cwf-admin-ui.php:91
+#: includes/class-pojo-cwf-admin-ui.php:109
 msgid "Upload"
-msgstr ""
-
-#: includes/class-pojo-cwf-admin-ui.php:90
-#: includes/class-pojo-cwf-admin-ui.php:108
-msgid "Desc?"
 msgstr ""
 
 #: includes/class-pojo-cwf-db.php:24
