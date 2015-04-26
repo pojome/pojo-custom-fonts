@@ -81,6 +81,17 @@ module.exports = function( grunt ) {
 				],
 				expand: true
 			}
+		},
+
+		wp_readme_to_markdown: {
+			github: {
+				options: {
+					gruntDependencyStatusUrl: 'https://david-dm.org/pojome/pojo-sidebars'
+				},
+				files: {
+					'README.md': 'readme.txt'
+				}
+			}
 		}
 		
 	} );
@@ -88,6 +99,7 @@ module.exports = function( grunt ) {
 	// Default task(s).
 	grunt.registerTask( 'default', [
 		'checktextdomain',
-		'pot'
+		'pot',
+		'wp_readme_to_markdown'
 	] );
 };
