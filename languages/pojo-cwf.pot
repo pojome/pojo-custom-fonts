@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-custom-fonts 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-23 15:41+0300\n"
+"POT-Creation-Date: 2015-04-26 17:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,46 +28,46 @@ msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:66
 #: includes/class-pojo-cwf-admin-ui.php:75
-msgid "Custom Font .woff"
+msgid "Font .woff"
 msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:67
 #: includes/class-pojo-cwf-admin-ui.php:76
-msgid "Custom Font .ttf"
+msgid "Font .ttf"
 msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:68
 #: includes/class-pojo-cwf-admin-ui.php:77
-msgid "Custom Font .svg"
+msgid "Font .svg"
 msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:69
 #: includes/class-pojo-cwf-admin-ui.php:78
-msgid "Custom Font .eot"
+msgid "Font .eot"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:86
-#: includes/class-pojo-cwf-admin-ui.php:106
+#: includes/class-pojo-cwf-admin-ui.php:85
+#: includes/class-pojo-cwf-admin-ui.php:104
 msgid "Upload or enter the file URL"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:90
-#: includes/class-pojo-cwf-admin-ui.php:108
+#: includes/class-pojo-cwf-admin-ui.php:88
+#: includes/class-pojo-cwf-admin-ui.php:106
 msgid "Insert Font"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:90
-#: includes/class-pojo-cwf-admin-ui.php:108
+#: includes/class-pojo-cwf-admin-ui.php:88
+#: includes/class-pojo-cwf-admin-ui.php:106
 msgid "Insert"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:90
-#: includes/class-pojo-cwf-admin-ui.php:108
+#: includes/class-pojo-cwf-admin-ui.php:88
+#: includes/class-pojo-cwf-admin-ui.php:106
 msgid "Upload"
 msgstr ""
 
-#: includes/class-pojo-cwf-admin-ui.php:92
-#: includes/class-pojo-cwf-admin-ui.php:110
+#: includes/class-pojo-cwf-admin-ui.php:90
+#: includes/class-pojo-cwf-admin-ui.php:108
 msgid "Desc?"
 msgstr ""
 
