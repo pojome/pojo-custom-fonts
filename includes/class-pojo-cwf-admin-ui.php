@@ -72,10 +72,10 @@ final class Pojo_CWF_Admin_UI {
 	public function extra_edit_metadata( $term ) {
 		$data = Pojo_CWF_Main::instance()->db->get_font_links( $term->term_id );
 		
-		$this->_print_image_edit_field( 'font_woff', __( 'Custom Font .woff', 'pojo-cwf' ), $data['font_woff'] );
-		$this->_print_image_edit_field( 'font_ttf', __( 'Custom Font .ttf', 'pojo-cwf' ), $data['font_ttf'] );
-		$this->_print_image_edit_field( 'font_svg', __( 'Custom Font .svg', 'pojo-cwf' ), $data['font_svg'] );
-		$this->_print_image_edit_field( 'font_eot', __( 'Custom Font .eot', 'pojo-cwf' ), $data['font_eot'] );
+		$this->_print_image_edit_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ), $data['font_woff'] );
+		$this->_print_image_edit_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ), $data['font_ttf'] );
+		$this->_print_image_edit_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), $data['font_svg'] );
+		$this->_print_image_edit_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ), $data['font_eot'] );
 	}
 
 	protected function _print_image_new_field( $id, $title, $value = '' ) {
