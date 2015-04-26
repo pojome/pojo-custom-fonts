@@ -7,26 +7,24 @@ final class Pojo_CWF_Register {
 		$fonts = Pojo_CWF_Main::instance()->db->get_fonts();
 		
 		?><style><?php
-		foreach ( $fonts as $font ) :
-		$font_slug = str_replace( ' ', '_', strtolower( $font['name'] ) );
-		?>
+		foreach ( $fonts as $font ) : ?>
 		@font-face {
-			font-family: '<?php echo esc_attr( $font['name'] ); ?>';
-			src: url('<?php echo esc_attr( $font['font_eot'] ); ?>');
-			src: url('<?php echo esc_attr( $font['font_eot'] ); ?>?#iefix') format('embedded-opentype'),
-			url('<?php echo esc_attr( $font['font_woff'] ); ?>') format('woff'),
-			url('<?php echo esc_attr( $font['font_ttf'] ); ?>') format('truetype'),
-			url('<?php echo esc_attr( $font['font_svg'] ); ?>#<?php echo $font_slug; ?>') format('svg');
+			font-family: '<?php echo esc_attr( $font->name ); ?>';
+			src: url('<?php echo esc_attr( $font->links['font_eot'] ); ?>');
+			src: url('<?php echo esc_attr( $font->links['font_eot'] ); ?>?#iefix') format('embedded-opentype'),
+			url('<?php echo esc_attr( $font->links['font_woff'] ); ?>') format('woff'),
+			url('<?php echo esc_attr( $font->links['font_ttf'] ); ?>') format('truetype'),
+			url('<?php echo esc_attr( $font->links['font_svg'] ); ?>#<?php echo $font->slug; ?>') format('svg');
 			font-style: normal;
 			font-weight: normal;
 		}
-		<?php endforeach;
+	<?php endforeach;
 		?></style><?php
 	}
 
 	public function add_fonts_to_pojo_customizer( $pojo_fonts ) {
 		foreach ( Pojo_CWF_Main::instance()->db->get_fonts() as $font ) {
-			$pojo_fonts[ $font['name'] ] = 'local';
+			$pojo_fonts[ $font->name ] = 'local';
 		}
 		return $pojo_fonts;
 	}
