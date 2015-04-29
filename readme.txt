@@ -48,6 +48,11 @@ Would you like to like to contribute to Pojo Custom Fonts? You are more than wel
 1. Drag and drop the widget and set it
 1. Enjoy!
 
+== Screenshots ==
+
+1. Add new custom font
+2. Select your custom font in Customizer
+
 == Changelog ==
 
 = 1.0.0 =
