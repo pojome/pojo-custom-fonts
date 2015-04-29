@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: pojo-custom-fonts 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-26 18:57+0300\n"
+"PO-Revision-Date: 2015-04-29 15:39+0200\n"
+"Language: he_IL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.7.4\n"
+
+#: includes/class-pojo-cwf-admin-ui.php:12
+#: includes/class-pojo-cwf-admin-ui.php:13 includes/class-pojo-cwf-db.php:23
+msgid "Custom Fonts"
+msgstr "פונטים מותאמים אישית"
+
+#: includes/class-pojo-cwf-admin-ui.php:32
+msgid "The name of the font as it appears in the attached CSS file."
+msgstr "שם הפונט כפי שהוא מופיע בקובץ CSS המצורף לקבצי הפונט."
+
+#: includes/class-pojo-cwf-admin-ui.php:41
+msgid "ID"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:69
+#: includes/class-pojo-cwf-admin-ui.php:78
+msgid "Font .woff"
+msgstr "פונט .woff"
+
+#: includes/class-pojo-cwf-admin-ui.php:69
+#: includes/class-pojo-cwf-admin-ui.php:78
+msgid "Upload the font's woff file"
+msgstr "יש להעלות קובץ בפורמט woff"
+
+#: includes/class-pojo-cwf-admin-ui.php:70
+#: includes/class-pojo-cwf-admin-ui.php:79
+msgid "Font .ttf"
+msgstr "פונט ttf"
+
+#: includes/class-pojo-cwf-admin-ui.php:70
+#: includes/class-pojo-cwf-admin-ui.php:79
+msgid "Upload the font's ttf file"
+msgstr "יש להעלות קובץ בפורמט ttf"
+
+#: includes/class-pojo-cwf-admin-ui.php:71
+#: includes/class-pojo-cwf-admin-ui.php:80
+msgid "Font .svg"
+msgstr "פונט svg"
+
+#: includes/class-pojo-cwf-admin-ui.php:71
+#: includes/class-pojo-cwf-admin-ui.php:80
+msgid "Upload the font's svg file"
+msgstr "יש להעלות קובץ בפורמט svg"
+
+#: includes/class-pojo-cwf-admin-ui.php:72
+#: includes/class-pojo-cwf-admin-ui.php:81
+msgid "Font .eot"
+msgstr "פונט eot"
+
+#: includes/class-pojo-cwf-admin-ui.php:72
+#: includes/class-pojo-cwf-admin-ui.php:81
+msgid "Upload the font's eot file"
+msgstr "יש להעלות קובץ בפורמט eot"
+
+#: includes/class-pojo-cwf-admin-ui.php:88
+#: includes/class-pojo-cwf-admin-ui.php:107
+msgid "Upload or enter the file URL"
+msgstr "להעלות או להזין URL קובץ"
+
+#: includes/class-pojo-cwf-admin-ui.php:91
+#: includes/class-pojo-cwf-admin-ui.php:109
+msgid "Insert Font"
+msgstr "להכניס פונט"
+
+#: includes/class-pojo-cwf-admin-ui.php:91
+#: includes/class-pojo-cwf-admin-ui.php:109
+msgid "Insert"
+msgstr "להכניס"
+
+#: includes/class-pojo-cwf-admin-ui.php:91
+#: includes/class-pojo-cwf-admin-ui.php:109
+msgid "Upload"
+msgstr "העלאה"
+
+#: includes/class-pojo-cwf-db.php:24
+msgid "Font"
+msgstr "פונט"
+
+#: includes/class-pojo-cwf-db.php:25
+msgctxt "Admin menu name"
+msgid "Custom Fonts"
+msgstr "פונטים"
+
+#: includes/class-pojo-cwf-db.php:26
+msgid "Search Fonts"
+msgstr "חיפוש פונטים"
+
+#: includes/class-pojo-cwf-db.php:27
+msgid "All Fonts"
+msgstr "כל הפונטים"
+
+#: includes/class-pojo-cwf-db.php:28
+msgid "Parent Font"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:29
+msgid "Parent Font:"
+msgstr ""
+
+#: includes/class-pojo-cwf-db.php:30
+msgid "Edit Font"
+msgstr "עריכת פונט"
+
+#: includes/class-pojo-cwf-db.php:31
+msgid "Update Font"
+msgstr "העלאת פונט"
+
+#: includes/class-pojo-cwf-db.php:32
+msgid "Add New Font"
+msgstr "הוספת פונט חדש"
+
+#: includes/class-pojo-cwf-db.php:33
+msgid "New Font Name"
+msgstr "שם פונט חדש"
+
+#: pojo-custom-fonts.php:55 pojo-custom-fonts.php:66
+msgid "Cheatin&#8217; huh?"
+msgstr ""
