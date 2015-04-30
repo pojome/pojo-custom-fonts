@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: pojo-custom-fonts 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-26 18:57+0300\n"
-"PO-Revision-Date: 2015-04-29 15:39+0200\n"
+"PO-Revision-Date: 2015-04-30 15:03+0200\n"
 "Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: includes/class-pojo-cwf-admin-ui.php:12
 #: includes/class-pojo-cwf-admin-ui.php:13 includes/class-pojo-cwf-db.php:23
 msgid "Custom Fonts"
-msgstr "פונטים מותאמים אישית"
+msgstr "פונטים"
 
 #: includes/class-pojo-cwf-admin-ui.php:32
 msgid "The name of the font as it appears in the attached CSS file."
