@@ -55,5 +55,8 @@ Would you like to like to contribute to Pojo Custom Fonts? You are more than wel
 
 == Changelog ==
 
+= 1.0.1 =
+* Added translate: Hebrew (he_IL)
+
 = 1.0.0 =
 * Initial Public Release!
