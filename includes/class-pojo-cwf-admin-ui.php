@@ -68,8 +68,8 @@ final class Pojo_CWF_Admin_UI {
 	public function extra_new_metadata() {
 		$this->_print_image_new_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ), __( 'Upload the font\'s woff file', 'pojo-cwf' ) );
 		$this->_print_image_new_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ), __( 'Upload the font\'s ttf file', 'pojo-cwf' ) );
-		$this->_print_image_new_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), __( 'Upload the font\'s svg file', 'pojo-cwf' ) );
 		$this->_print_image_new_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ), __( 'Upload the font\'s eot file', 'pojo-cwf' ) );
+		$this->_print_image_new_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), __( 'Upload the font\'s svg file', 'pojo-cwf' ) );
 	}
 
 	public function extra_edit_metadata( $term ) {
@@ -77,8 +77,8 @@ final class Pojo_CWF_Admin_UI {
 
 		$this->_print_image_edit_field( 'font_woff', __( 'Font .woff', 'pojo-cwf' ), __( 'Upload the font\'s woff file', 'pojo-cwf' ), $data['font_woff'] );
 		$this->_print_image_edit_field( 'font_ttf', __( 'Font .ttf', 'pojo-cwf' ), __( 'Upload the font\'s ttf file', 'pojo-cwf' ), $data['font_ttf'] );
-		$this->_print_image_edit_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), __( 'Upload the font\'s svg file', 'pojo-cwf' ), $data['font_svg'] );
 		$this->_print_image_edit_field( 'font_eot', __( 'Font .eot', 'pojo-cwf' ), __( 'Upload the font\'s eot file', 'pojo-cwf' ), $data['font_eot'] );
+		$this->_print_image_edit_field( 'font_svg', __( 'Font .svg', 'pojo-cwf' ), __( 'Upload the font\'s svg file', 'pojo-cwf' ), $data['font_svg'] );
 	}
 
 	protected function _print_image_new_field( $id, $title, $description, $value = '' ) {
@@ -104,7 +104,7 @@ final class Pojo_CWF_Admin_UI {
 				</label>
 			</th>
 			<td>
-				<input id="metadata-<?php echo esc_attr( $id ); ?>" type="text" class="pojo-input-file-upload" name="pojo_custom_fonts[<?php echo esc_attr( $id ); ?>]" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>" required />
+				<input id="metadata-<?php echo esc_attr( $id ); ?>" type="text" class="pojo-input-file-upload" name="pojo_custom_fonts[<?php echo esc_attr( $id ); ?>]" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>"<?php if ( 'font_svg' !== $id ) echo ' required'; ?> />
 				<span class="pojo-span-file-upload">
 					<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload button"><?php _e( 'Upload', 'pojo-cwf' ); ?></a>
 				</span>

@@ -63,7 +63,8 @@ Would you like to like to contribute to Pojo Custom Fonts? You are more than wel
 
 ### 1.0.1 ###
 * Added translate: Hebrew (he_IL)
-* Added Custom Fonts in Top customizer dropdown
+* The SVG format is now optional
+* Every new font is added to the beginning of the list in the Customizer.
 
 ### 1.0.0 ###
 * Initial Public Release!

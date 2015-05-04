@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-custom-fonts 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-04 14:43+0300\n"
+"POT-Creation-Date: 2015-05-04 17:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,22 +52,22 @@ msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:71
 #: includes/class-pojo-cwf-admin-ui.php:80
-msgid "Font .svg"
+msgid "Font .eot"
 msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:71
 #: includes/class-pojo-cwf-admin-ui.php:80
-msgid "Upload the font's svg file"
-msgstr ""
-
-#: includes/class-pojo-cwf-admin-ui.php:72
-#: includes/class-pojo-cwf-admin-ui.php:81
-msgid "Font .eot"
-msgstr ""
-
-#: includes/class-pojo-cwf-admin-ui.php:72
-#: includes/class-pojo-cwf-admin-ui.php:81
 msgid "Upload the font's eot file"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:72
+#: includes/class-pojo-cwf-admin-ui.php:81
+msgid "Font .svg"
+msgstr ""
+
+#: includes/class-pojo-cwf-admin-ui.php:72
+#: includes/class-pojo-cwf-admin-ui.php:81
+msgid "Upload the font's svg file"
 msgstr ""
 
 #: includes/class-pojo-cwf-admin-ui.php:88
