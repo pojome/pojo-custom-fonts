@@ -5,7 +5,7 @@
 **Tags:** font, fonts, custom font, custom fonts, web font, web fonts, custom web fonts, webfonts, typography, webfont,  
 **Requires at least:** 4.1  
 **Tested up to:** 4.2  
-**Stable tag:** 1.0.0  
+**Stable tag:** 1.0.1  
 **License:** GPLv2 or later  
 
 Pojo Custom Fonts allows you to add as many custom fonts as you need to your theme  which works with Pojo Framework. It then allows you to use them in the typography fields in the customizer area. No CSS knowledge required!
@@ -61,11 +61,9 @@ Would you like to like to contribute to Pojo Custom Fonts? You are more than wel
 
 ## Changelog ##
 
-### 1.0.2 ###
-* Added Custom Fonts in Top customizer dropdown
-
 ### 1.0.1 ###
 * Added translate: Hebrew (he_IL)
+* Added Custom Fonts in Top customizer dropdown
 
 ### 1.0.0 ###
 * Initial Public Release!
