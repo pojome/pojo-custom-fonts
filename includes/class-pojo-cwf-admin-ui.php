@@ -85,7 +85,7 @@ final class Pojo_CWF_Admin_UI {
 		?>
 		<div class="form-field form-required term-<?php echo esc_attr( $id ); ?>-wrap pojo-setting-upload-file-wrap">
 			<label class="pojo-file-upload-label"><?php echo $title; ?></label>
-			<input type="text" class="pojo-input-file-upload" name="pojo_custom_fonts[<?php echo esc_attr( $id ); ?>]" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>" required />
+			<input type="text" class="pojo-input-file-upload" name="pojo_custom_fonts[<?php echo esc_attr( $id ); ?>]" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>"<?php if ( 'font_svg' !== $id ) echo ' required'; ?> />
 
 			<span class="pojo-span-file-upload">
 					<a href="javascript:void(0);" data-uploader-title="<?php _e( 'Insert Font', 'pojo-cwf' ); ?>" data-uploader-button-text="<?php _e( 'Insert', 'pojo-cwf' ); ?>" class="pojo-button-file-upload button"><?php _e( 'Upload', 'pojo-cwf' ); ?></a>
