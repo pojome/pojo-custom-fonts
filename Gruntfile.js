@@ -105,7 +105,7 @@ module.exports = function( grunt ) {
 
 		replace: {
 			plugin_main: {
-				src: [ 'pojo-sidebars.php' ],
+				src: [ 'pojo-custom-fonts.php' ],
 				overwrite: true,
 				replacements: [
 					{
