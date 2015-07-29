@@ -3,7 +3,7 @@ Contributors: pojo.me, KingYes, ariel.k
 Tags: font, fonts, custom font, custom fonts, web font, web fonts, custom web fonts, webfonts, typography, webfont,
 Requires at least: 4.1
 Tested up to: 4.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 
 Pojo Custom Fonts allows you to add as many custom fonts as you need to your theme  which works with Pojo Framework. It then allows you to use them in the typography fields in the customizer area. No CSS knowledge required!
@@ -54,6 +54,9 @@ Would you like to like to contribute to Pojo Custom Fonts? You are more than wel
 2. Select your custom font in Customizer
 
 == Changelog ==
+
+= 1.0.3 =
+* Fixes require fields
 
 = 1.0.2 =
 * The SVG format is now optional (in new font too) 

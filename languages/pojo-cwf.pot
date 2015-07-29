@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pojo-custom-fonts 1.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-06 08:12+0300\n"
+"POT-Creation-Date: 2015-07-29 17:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -131,6 +131,6 @@ msgstr ""
 msgid "New Font Name"
 msgstr ""
 
-#: pojo-custom-fonts.php:55 pojo-custom-fonts.php:66
+#: pojo-custom-fonts.php:70 pojo-custom-fonts.php:81
 msgid "Cheatin&#8217; huh?"
 msgstr ""

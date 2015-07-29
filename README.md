@@ -61,6 +61,9 @@ Would you like to like to contribute to Pojo Custom Fonts? You are more than wel
 
 ## Changelog ##
 
+### 1.0.3 ###
+* Fixes require fields
+
 ### 1.0.2 ###
 * The SVG format is now optional (in new font too) 
 
