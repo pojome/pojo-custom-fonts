@@ -83,7 +83,7 @@ final class Pojo_CWF_Admin_UI {
 
 	protected function _print_image_new_field( $id, $title, $description, $value = '' ) {
 		?>
-		<div class="form-field form-required term-<?php echo esc_attr( $id ); ?>-wrap pojo-setting-upload-file-wrap">
+		<div class="form-field term-<?php echo esc_attr( $id ); ?>-wrap pojo-setting-upload-file-wrap<?php if ( 'font_svg' !== $id ) echo ' form-required'; ?>">
 			<label class="pojo-file-upload-label"><?php echo $title; ?></label>
 			<input type="text" class="pojo-input-file-upload" name="pojo_custom_fonts[<?php echo esc_attr( $id ); ?>]" placeholder="<?php _e( 'Upload or enter the file URL', 'pojo-cwf' ); ?>" value="<?php echo esc_attr( $value ); ?>"<?php if ( 'font_svg' !== $id ) echo ' required'; ?> />
 
@@ -97,7 +97,7 @@ final class Pojo_CWF_Admin_UI {
 
 	protected function _print_image_edit_field( $id, $title, $description, $value = '' ) {
 		?>
-		<tr class="form-field form-required term-<?php echo esc_attr( $id ); ?>-wrap pojo-setting-upload-file-wrap">
+		<tr class="form-field term-<?php echo esc_attr( $id ); ?>-wrap pojo-setting-upload-file-wrap<?php if ( 'font_svg' !== $id ) echo ' form-required'; ?>">
 			<th scope="row">
 				<label for="metadata-<?php echo esc_attr( $id ); ?>">
 					<?php echo $title; ?>

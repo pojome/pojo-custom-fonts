@@ -81,7 +81,7 @@ final class Pojo_CWF_Main {
 		_doing_it_wrong( __FUNCTION__, __( 'Cheatin&#8217; huh?', 'pojo-cwf' ), '1.0.0' );
 	}
 
-	/**cd
+	/**
 	 * @return Pojo_CWF_Main
 	 */
 	public static function instance() {
