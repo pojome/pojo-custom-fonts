@@ -4,7 +4,7 @@
 **Contributors:** pojo.me, KingYes, ariel.k  
 **Tags:** font, fonts, custom font, custom fonts, web font, web fonts, custom web fonts, webfonts, typography, webfont,  
 **Requires at least:** 4.1  
-**Tested up to:** 4.2  
+**Tested up to:** 4.4  
 **Stable tag:** 1.0.3  
 **License:** GPLv2 or later  
 
@@ -60,6 +60,9 @@ Would you like to like to contribute to Pojo Custom Fonts? You are more than wel
 
 
 ## Changelog ##
+
+### 1.0.4 ###
+* Fixed wrong permission in WordPress v4.4
 
 ### 1.0.3 ###
 * Fixes require fields
