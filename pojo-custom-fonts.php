@@ -1,12 +1,13 @@
 <?php
 /*
 Plugin Name: Pojo Custom Fonts
-Plugin URI: http://pojo.me/
+Plugin URI:  https://wordpress.org/plugins/pojo-custom-fonts/
+Version:     1.0.5
 Description: Pojo Custom Fonts allows you to add as many custom fonts as you need to your theme  which works with Pojo Framework. It then allows you to use them in the typography fields in the customizer area. No CSS knowledge required!
-Author: Pojo Team
-Author URI: http://pojo.me/
-Version: 1.0.4
+Author:      Pojo Team
+Author URI:  http://pojo.me/
 Text Domain: pojo-cwf
+License:     GPLv2 or later
 
 
 This program is free software; you can redistribute it and/or
@@ -108,3 +109,4 @@ final class Pojo_CWF_Main {
 }
 
 Pojo_CWF_Main::instance();
+// EOF
