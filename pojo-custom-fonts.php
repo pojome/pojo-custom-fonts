@@ -7,7 +7,6 @@ Author: Pojo Team
 Author URI: http://pojo.me/
 Version: 1.0.4
 Text Domain: pojo-cwf
-Domain Path: /languages/
 
 
 This program is free software; you can redistribute it and/or
@@ -53,7 +52,7 @@ final class Pojo_CWF_Main {
 	public $register;
 
 	public function load_textdomain() {
-		load_plugin_textdomain( 'pojo-cwf', false, basename( dirname( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'pojo-cwf' );
 	}
 
 	/**
