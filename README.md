@@ -1,10 +1,10 @@
 # Pojo Custom Fonts #
-[![Dependency Status](https://david-dm.org/pojome/pojo-sidebars/dev-status.svg)](https://david-dm.org/pojome/pojo-sidebars#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Dependency Status](https://david-dm.org/pojome/pojo-sidebars/dev-status.svg)](https://david-dm.org/pojome/pojo-sidebars#info=devDependencies) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
 
 **Contributors:** pojo.me, KingYes, ariel.k  
 **Tags:** font, fonts, custom font, custom fonts, web font, web fonts, custom web fonts, webfonts, typography, webfont,  
 **Requires at least:** 4.1  
-**Tested up to:** 4.4  
+**Tested up to:** 4.8  
 **Stable tag:** 1.0.4  
 **License:** GPLv2 or later  
 
@@ -60,6 +60,9 @@ Would you like to like to contribute to Pojo Custom Fonts? You are more than wel
 
 
 ## Changelog ##
+
+### 1.0.5 ###
+* Fix! - Allow Mime Type upload for custom fonts files
 
 ### 1.0.4 ###
 * Fixed wrong permission in WordPress v4.4
