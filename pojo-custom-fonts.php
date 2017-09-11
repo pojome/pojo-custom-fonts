@@ -5,7 +5,7 @@ Plugin URI: http://pojo.me/
 Description: Pojo Custom Fonts allows you to add as many custom fonts as you need to your theme  which works with Pojo Framework. It then allows you to use them in the typography fields in the customizer area. No CSS knowledge required!
 Author: Pojo Team
 Author URI: http://pojo.me/
-Version: 1.0.4
+Version: 1.0.5
 Text Domain: pojo-cwf
 Domain Path: /languages/
 
