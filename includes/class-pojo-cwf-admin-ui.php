@@ -119,7 +119,7 @@ final class Pojo_CWF_Admin_UI {
 			$t['svg'] = 'image/svg+xml';
 			$t['woff'] = 'application/octet-stream';
 			$t['eot'] = 'application/vnd.ms-fontobject';
-			$t['ttf'] = 'font/ttf';
+			$t['ttf'] = 'application/x-font-ttf';
 		}
 		return $t;
 	}
