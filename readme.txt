@@ -2,7 +2,7 @@
 Contributors: pojo.me, KingYes, ariel.k
 Tags: font, fonts, custom font, custom fonts, web font, web fonts, custom web fonts, webfonts, typography, webfont,
 Requires at least: 4.1
-Tested up to: 5.1
+Tested up to: 5.2
 Stable tag: 1.0.5
 License: GPLv2 or later
 
